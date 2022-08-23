@@ -3,8 +3,11 @@ package com.example.githubtrendingrepoapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.example.githubtrendingrepoapp.R.id.image_view
 import com.squareup.picasso.Picasso
 //import com.google.gson.internal.GsonBuildConfig
 import retrofit2.Call
@@ -16,11 +19,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MainActivity : AppCompatActivity() {
 
     val modelList=ArrayList<Model>()
+    // lateinit var imageView:ImageView
+
     //val responseBody=Response<List<APIResponseObject>>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        //View itemView=
+       // var constraintLayout:ConstraintLayout=findViewById(R.id.constraintLayout)
 
         getMyData()
        // initData()
@@ -36,20 +42,18 @@ class MainActivity : AppCompatActivity() {
                 call: Call<List<APIResponseObjectItem>?>?,
                 response: Response<List<APIResponseObjectItem>?>?
             ) {
+               // imageView=findViewById(R.id.image_view)
                 if(response!=null){
                     val responseBody= response.body()
-                    val imageView:ImageView?=findViewById(R.id.image_view)
                     if (responseBody != null) {
                         for(data in responseBody){
                             //val imageView:ImageView=view
-                            modelList.add(Model(data.author.toString(),data.name.toString(),data.description.toString(),R.drawable.ic_action_name))
-//                           if(imageView!=null){
-//                               Picasso.get().load(data.avatar.toString()).into(imageView)
-//
-//                           }
-
+                            modelList.add(Model(data.author.toString(),data.name.toString(),data.description.toString(),data.avatar.toString()))
+                          //  Picasso.get().load(data.avatar.toString()).placeholder(R.drawable.ic_action_name).error(R.drawable.ic_action_name).into(imageView)
+                            Log.d("imageurl is ",data.avatar.toString())
                             Log.d("Author is ",data.author.toString())
                             Log.d("Name is ",data.name.toString())
+
 
 
                         }

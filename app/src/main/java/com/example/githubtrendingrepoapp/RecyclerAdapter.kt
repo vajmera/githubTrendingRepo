@@ -1,5 +1,6 @@
 package com.example.githubtrendingrepoapp
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
 class RecyclerAdapter(val modelList:List<Model>): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
@@ -20,6 +22,13 @@ class RecyclerAdapter(val modelList:List<Model>): RecyclerView.Adapter<RecyclerA
 
         var constraintLayout: ConstraintLayout =itemView.findViewById(R.id.constraintLayout)
         var expandableLayout:RelativeLayout=itemView.findViewById(R.id.expandable_view_layout)
+
+        //var img_android: ImageView=itemView.findViewById<View>(R.id.image_view) as ImageView
+
+
+            //img_android =
+
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,7 +42,11 @@ class RecyclerAdapter(val modelList:List<Model>): RecyclerView.Adapter<RecyclerA
         holder.username.text=model.username
         holder.repoName.text=model.reponame
         holder.description.text=model.detailed
-        holder.image.setImageResource(model.image)
+        //var imageView:ImageView=findViewById(R.id.image_view)
+
+       // holder.image.setImageResource(model.image)
+      Picasso.get().load(model.imageURL).placeholder(R.drawable.ic_action_name).error(R.drawable.ic_action_name).into(holder.image)
+//        Log.d("imageurl is ",data.avatar.toString())
 
         val isExpandable:Boolean=modelList[position].expandable
         holder.expandableLayout.visibility=if(isExpandable) View.VISIBLE else View.GONE
