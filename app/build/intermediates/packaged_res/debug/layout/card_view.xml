@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/constraintLayout"
+        android:padding="8dp"
+        >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/image_view"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+        <TextView
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/textView"
+            android:text="github Username"
+
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:padding="10dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/image_view"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:id="@+id/textView2"
+
+            android:layout_marginStart="10dp"
+            android:text="repo name"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintLeft_toRightOf="@+id/image_view"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/expandable_view_layout"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:layout_marginStart="110dp"
+            app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
+            >
+
+            <TextView
+                android:id="@+id/expand_text"
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+
+                android:text="description"
+
+                android:textSize="18sp"></TextView>
+
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

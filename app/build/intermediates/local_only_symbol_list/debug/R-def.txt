@@ -1,0 +1,29 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color colorPrimary
+color colorPrimaryDark
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_action_name
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id constraintLayout
+id expand_text
+id expandable_view_layout
+id image_view
+id recyclerView
+id textView
+id textView2
+layout activity_main
+layout card_view
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.GithubTrendingRepoApp
+xml backup_rules
+xml data_extraction_rules
